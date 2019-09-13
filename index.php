@@ -67,7 +67,7 @@
       </div>
       <button class="btn btn-lg btn-primary btn-block" >Acceder</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
-      </div>
+    </div>
 
   <script src="js/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
   <script src="js/jquery-1.9.1.js"></script>
