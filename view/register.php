@@ -81,8 +81,23 @@
         type: 'post',
         url: '../php/usuario/guardar_usuario.php',
         data: values,//$('form').serialize(),
-        success: function () {
-            alert('form was submitted');
+        success: function (e) { 
+            try {
+                var obj = $.parseJSON(e);
+                if (obj.success === true) {
+                
+                    if (obj.message === 1) {
+                        alert("datos guardados exitosamente")
+                    }else if(obj.message === 0){
+                        alert("El usuario ya existe")
+                    }
+
+                }
+            } catch (error) {
+                alert("Ha ocurrido un error inesperado: "+e)
+            }
+            
+        
         }
         });
 
