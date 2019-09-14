@@ -21,32 +21,32 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
-            <input name="" class="form-control" placeholder="Nombre completo" type="text">
+            <input id="name" class="form-control" placeholder="Nombre completo" type="text">
         </div> <!-- form-group// -->
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
             </div>
-            <input name="" class="form-control" placeholder="Dirección Email" type="email">
+            <input id="email" class="form-control" placeholder="Dirección Email" type="email">
         </div> <!-- form-group// -->
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
             </div>
-            <input name="" class="form-control" placeholder="Número de teléfono" type="text">
+            <input id="phone" class="form-control" placeholder="Número de teléfono" type="text">
         </div> <!-- form-group// -->
 
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
             </div>
-            <input class="form-control" placeholder="Contraseña" type="password">
+            <input id="password" class="form-control" placeholder="Contraseña" type="password">
         </div> <!-- form-group// -->
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
             </div>
-            <input class="form-control" placeholder="Confirmar contraseña" type="password">
+            <input name="password" class="form-control" placeholder="Confirmar contraseña" type="password">
         </div> <!-- form-group// -->
             <div class="checkbox mb-3">
                 <center>
@@ -71,11 +71,16 @@
     $('form').on('submit', function (e) {
 
         e.preventDefault();
-
+        var values={
+            name: $('#name').val(),
+            email: $('#email').val(),
+            phone: $('#phone').val(),
+            password: $('#password').val()
+        }
         $.ajax({
         type: 'post',
         url: '../php/usuario/guardar_usuario.php',
-        data: $('form').serialize(),
+        data: values,//$('form').serialize(),
         success: function () {
             alert('form was submitted');
         }
