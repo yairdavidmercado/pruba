@@ -16,10 +16,10 @@
 	<table class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">email</th>
-            <th scope="col">teléfono</th>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">email</th>
+                <th scope="col">teléfono</th>
             </tr>
         </thead>
         <tbody id="grid_view">
